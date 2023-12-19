@@ -2,19 +2,38 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class StaticThing {
-    private double sizeX;
-    private double sizeY;
-    private ImageView imageView;
+    private int x;
+    private int y;
 
-    public StaticThing(double sizeX, double sizeY, String fileName) {
-        this.sizeX = sizeX;
-        this.sizeY = sizeY;
-        this.imageView = new ImageView(new Image(fileName));
-        this.imageView.setFitWidth(sizeX);
-        this.imageView.setFitHeight(sizeY);
+    ImageView image;
+
+
+    public StaticThing(String fileName, int x, int y){
+        this.x = x;
+        this.y = y;
+        this.image = new ImageView("file:src\\img\\"+fileName);
     }
 
-    public ImageView getImageView() {
-        return imageView;
+    public ImageView getImageView(){
+        return image;
     }
+
+    public void setX(int x){
+        this.x = x;
+    }
+
+    public void setY(int y){
+        this.y = y;
+    }
+
+    public int getX(){
+        return this.x;
+    }
+
+    public int getY(){
+        return this.y;
+    }
+
+
+
 }
